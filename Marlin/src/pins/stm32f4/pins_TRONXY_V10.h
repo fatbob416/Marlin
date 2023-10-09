@@ -36,7 +36,7 @@
 //
 // Servos
 //
-//#define SERVO0_PIN                        PB10
+#define SERVO0_PIN                        PB10
 
 //
 // EEPROM
@@ -190,12 +190,12 @@
   #error "TFT_TRONXY_X5SA is not yet supported."
 #endif
 
-#if 0
+//#if 0
 
 //
 // TFT with FSMC interface
 //
-#if HAS_FSMC_TFT
+//#if HAS_FSMC_TFT
   #define TFT_RESET_PIN                     PB12
   #define TFT_BACKLIGHT_PIN                 PG8
 
@@ -204,8 +204,8 @@
   #define TFT_CS_PIN                        PG12
   #define TFT_RS_PIN                        PG2
 
-  //#define TFT_WIDTH                        480
-  //#define TFT_HEIGHT                       320
+  #define TFT_WIDTH                        320 //480
+  #define TFT_HEIGHT                       240 //320
   //#define TFT_PIXEL_OFFSET_X                48
   //#define TFT_PIXEL_OFFSET_Y                32
   //#define TFT_DRIVER                   ILI9488
@@ -244,9 +244,9 @@
     #define TOUCH_OFFSET_X                   -31
     #define TOUCH_OFFSET_Y                   -29
   #endif
-#endif
+//#endif
 
-#endif
+//#endif
 
 //
 // SD Card
@@ -255,3 +255,16 @@
 #define SD_DETECT_PIN                       -1    // PF0, but not connected
 #define SDIO_CLOCK                       4500000
 #define SDIO_READ_RETRIES                     16
+
+#define SDIO_D0_PIN                         PC8
+#define SDIO_D1_PIN                         PC9
+#define SDIO_D2_PIN                         PC10
+#define SDIO_D3_PIN                         PC11
+#define SDIO_CK_PIN                         PC12
+#define SDIO_CMD_PIN                        PD2
+
+#if USBHOST_HS_EN
+#define HAS_OTG_USB_HOST_SUPPORT
+#endif
+
+#define SPEAKER //蜂鸣器无源
